@@ -630,6 +630,7 @@ So **no**, we can't use them interchangeably.
 <img src="https://i.stack.imgur.com/rwdMu.png" class="img-fluid" />
 </div>
 **Source:** _stackoverflow.com_
+    
 ### Q15: Rewrite this code in Kotlin ☆☆☆
 **Details:**
 Can you rewrite this Java code in Kotlin?
@@ -654,6 +655,7 @@ Using Kotlin:
 object Singleton
 ```
 **Source:** _antonioleiva.com_
+    
 ### Q16: How would you create a singleton with parameter in Kotlin? ☆☆☆
 **Answer:**
 Because a Kotlin `object` can’t have any constructor, you can’t pass any argument to it.
@@ -674,6 +676,7 @@ class UsersDatabase : RoomDatabase() {
 }
 ```
 **Source:** _stackoverflow.com_
+    
 ### Q17: What is the Kotlin double-bang (!!) operator? ☆☆☆
 **Answer:**
 The **not-null assertion operator !!** converts any value to a non-null type and throws a `KotlinNullPointerException` exception if the value is null.
@@ -687,6 +690,7 @@ fun main(args: Array<String>) {
 ```
 This operator should be used in cases where the developer is guaranteeing – it allows you to be 100% sure that its value is not null. 
 **Source:** _stackoverflow.com_
+    
 ### Q18: What is the purpose of Unit-returning in functions? Why is VALUE there? What is this VALUE? ☆☆☆
 **Details:**
 Explain what is the purpose of Unit-returning in functions? Why is VALUE there? What is this VALUE?
@@ -706,6 +710,7 @@ The purpose is the same as C's or Java's `void`. Only Unit is a proper type, so 
 3. How to access that value of Unit: since it's a singleton object, just say `Unit`
 4. `UNIT` actually contains valuable information, it basically just means "DONE". It just returns the information to the caller, that the method has been finished. 
 **Source:** _stackoverflow.com_
+    
 ### Q19: When would you use Elvis operator in Kotlin? ☆☆☆
 **Answer:**
 The Elvis operator is part of many programming languages, e.g. Kotlin but also Groovy or C#. The Elvis operator is the ternary operator with its second operand omitted.
@@ -714,7 +719,8 @@ x ?: y // yields `x` if `x` is not null, `y` otherwise.
 ```
 If `x` isn't null, then it will be returned. If it is null, then the `y` will be returned. 
 **Source:** _kotlinlang.org_
-### Q40: What are scope functions in Kotlin? ☆☆☆
+    
+### Q20: What are scope functions in Kotlin? ☆☆☆
 **Answer:**
 The Kotlin standard library contains several functions whose sole purpose is to execute a block of code within the context of an object. When you call such a function on an object with a lambda expression provided, it forms a temporary scope. In this scope, you can access the object without its name. Such functions are called **scope functions**. 
 There are five of them: 
@@ -724,11 +730,13 @@ There are five of them:
 * `apply`,
 * `also`.
 **Source:** _stackoverflow.com_
+    
 ### Q1: Why is there no static keyword in Kotlin? ☆☆☆☆
 **Answer:**
 _The main advantage of this is that everything is an object_. Companion objects can inherit from other classes or implement interfaces and generally behave like any other singleton.
 In Java, static members are treated very differently than object members. This means that you can't do things like implementing an interface or putting your class "instance" into a map or pass it as a parameter to a method that takes Object. Companion objects allow for these things. That's the advantage.
 **Source:** _softwareengineering.stackexchange.com_
+    
 ### Q2: What is inline class in Kotlin and when do we need one? Provide an example. ☆☆☆☆
 **Answer:**
 Sometimes it is necessary for business logic to create a wrapper around some type. However, it introduces runtime overhead due to additional heap allocations. Moreover, if the wrapped type is primitive, the performance hit is terrible, because primitive types are usually heavily optimized by the runtime.
@@ -754,6 +762,7 @@ Some notes about inline classes:
 * Inline classes can inherit only from interfaces
 * Inline classes are also effectively final
 **Source:** _www.baeldung.com_
+    
 ### Q3: Explain the difference between Inline classes vs type aliases ☆☆☆☆
 **Answer:**
 The crucial difference is that type aliases are **assignment-compatible** with their underlying type (and with other type aliases with the same underlying type), while inline classes are not.
@@ -776,6 +785,7 @@ fun main() {
 }
 ```
 **Source:** _blog.mindorks.com_
+    
 ### Q4: What is Coroutine Scope and how is that different from Coroutine Context? ☆☆☆☆
 **Answer:**
 * Coroutines always execute in some context represented by a value of the **CoroutineContext** type, defined in the Kotlin standard library. The coroutine context is a set of various elements. The main elements are the **Job** of the coroutine.
@@ -799,6 +809,7 @@ runBlocking {
 ```
 You might say that **CoroutineScope** formalizes the way the **CoroutineContext** is inherited. You can see how the **CoroutineScope** mediates the inheritance of coroutine contexts. If you cancel the job in `scope1`, this will propagate to `scope2` and will cancel the launched job as well.
 **Source:** _stackoverflow.com_
+    
 ### Q5: Imagine you moving your code from Java to Kotlin. How would you rewrite this code in Kotlin? ☆☆☆☆☆
 **Details:**
 ```java
@@ -819,6 +830,7 @@ class MyClass {
 }  
 ```
 **Source:** _stackoverflow.com_
+    
 ### Q6: How would you override default getter for Kotlin data class? ☆☆☆☆
 **Details:**
 Given the following Kotlin class:
@@ -853,6 +865,7 @@ How would I override the Int getter so that it returns `0` if the value negative
  }
  ```
 **Source:** _stackoverflow.com_
+         
 ### Q7: What is Kotlin backing field is used for? ☆☆☆☆
 **Answer:**
 Backing field is an autogenerated field for any property which can only be used inside the accessors(getter or setter) and will be present only if it uses the default implementation of at least one of the accessors, or if a custom accessor references it through the `field` identifier. _This backing field is used to avoid the recursive call of an accessor which ultimately prevents the StackOverflowError._
@@ -865,6 +878,7 @@ var selectedColor: Int = someDefaultValue
         }
 ```
 **Source:** _stackoverflow.com_
+         
 ### Q8: What are Object expressions in Kotlin and when to use them? ☆☆☆☆
 **Answer:**
 Sometimes we need to create an object of some class with slight modification, without explicitly declaring a new subclass for it. Java handles this case with anonymous inner classes. Kotlin uses **object expression** to achieve the same functionality. We can even create an object expression for an interface or abstract class by just implementing their abstract methods.
@@ -880,6 +894,7 @@ window.addMouseListener(object : MouseAdapter() {
 })
 ```
 **Source:** _kotlinlang.org_
+         
 ### Q9: How to create empty constructor for data class in Kotlin? ☆☆☆☆
 **Answer:**
 If you give **default values to all the fields** - empty constructor is generated automatically by Kotlin.
@@ -899,6 +914,7 @@ data class User(var id: Long,
 }
 ```
 **Source:** _stackoverflow.com_
+         
 ### Q10: How to create an instance of anonymous class of abstract class in Kotlin? ☆☆☆☆
 **Details:**
 Assume that `KeyAdapter` is an abstract class with several methods that can be overridden.
@@ -920,17 +936,20 @@ val keyListener = object : KeyAdapter() {
 } 
 ```
 **Source:** _stackoverflow.com_
+         
 ### Q11: Why do we use “companion object” as a kind of replacement for Java static fields in Kotlin? ☆☆☆☆☆
 **Answer:**
 Because `static`s are not object-oriented. Kotlin does, however, have globals, which function similarly, and objects, which provide static functionality but remain object-oriented.
 Java `static` part of a class can be elegantly expressed in terms of singleton: it's a singleton object that can be called by the class' name. Hence the naming: it's an object that comes with a class.
 Apart from naming, it is more powerful than Java static members: it can extend classes and interfaces, and you can reference and pass it around just like other objects.
 **Source:** _stackoverflow.com_
+                           
 ### Q12: What is the difference between “*” and “Any” in Kotlin generics? ☆☆☆☆☆
 **Answer:**
 * `List<*>` can contain objects of any type, but _only that type_, so it can contain `Strings` (but only `Strings`)
 * while `List<Any>` can contain `Strings` and `Integers` and whatnot, all in the same list
 **Source:** _stackoverflow.com_
+    
 ### Q13: How can I create “static” method for enum in Kotiln? ☆☆☆☆
 **Answer:**
 Just like with any other class, you can define a class object in an enum class:
@@ -946,12 +965,14 @@ enum class CircleType {
 ```
 Then you'll be able to call this function as `CircleType.random()`.
 **Source:** _stackoverflow.com_
+    
 ### Q14: What is SAM Conversion in Kotlin? ☆☆☆☆☆
 **Answer:**
  "SAM" stands for "single abstract method", and "SAM-type" refers to interfaces like Runnable, Callable.
 Just like Java 8, Kotlin supports SAM conversions. This means that Kotlin function literals can be automatically converted into implementations of Java interfaces with a single non-default method, as long as the parameter types of the interface method match the parameter types of the Kotlin function.
 That means that when you call some Java method from Kotlin, and that method satisfies conditions described above, you can pass lambda or method reference instead.
 **Source:** _kotlinlang.org_
+    
 ### Q15: Explain the difference between lateinit and lazy in details ☆☆☆☆☆
 **Answer:**
 Here are the significant differences between `lateinit var` and `by lazy { ... }` delegated property:
@@ -964,6 +985,7 @@ Here are the significant differences between `lateinit var` and `by lazy { ... }
 * If you hold a reference to an instance of `Lazy`, [`isInitialized()`][2] allows you to check whether it has already been initialized (and you can [obtain such instance with reflection][3] from a delegated property). To check whether a lateinit property has been initialized, you can [use `property::isInitialized` since Kotlin 1.2][4].
 * A lambda passed to `by lazy { ... }` may capture references from the context where it is used into its [closure][5].. It will then store the references and release them only once the property has been initialized. This may lead to object hierarchies, such as Android activities, not being released for too long (or ever, if the property remains accessible and is never accessed), so you should be careful about what you use inside the initializer lambda.
 **Source:** _stackoverflow.com_
+    
 ### Q16: Provide a real use case when inline classes may be useful ☆☆☆☆
 **Answer:**
 Imagine an authentication method in an API that looks as follows:
@@ -983,6 +1005,7 @@ fun main() {
 }
 ```
 **Source:** _kotlinexpertise.com_
+    
 ### Q17: What's wrong with that code? ☆☆☆☆☆
 **Details:**
 Let's say I want to override the Int getter so that it returns 0 if the value negative for the data class. What's bad with that approach?
@@ -995,6 +1018,7 @@ data class Test(private val _value: Int) {
 **Answer:**
 The problem with this approach is that data classes aren't really meant for altering data like this. They are really just for _holding_ data. Overriding the getter for a data class like this would mean that `Test(0)` and `Test(-1)` wouldn't equal one another and would have different `hashCodes`, but when you called `.value`, they would have the same result. This is inconsistent, and while it may work for you, other people on your team who see this is a data class, may accidentally misuse it.
 **Source:** _stackoverflow.com_
+                           
 ### Q18: Why would you use apply in Kotlin? ☆☆☆
 **Answer:**
 Look at this code:
@@ -1012,6 +1036,7 @@ val person = Person().apply {
 ```
 This way you don't have to repeat person several times. Apply is used to keep things that belong together in one place (mostly initializations).
 **Source:** _stackoverflow.com_
+        
 ### Q19: Rewrite this code using "run" extension function  ☆☆☆☆
 **Details:**
 Consider:
@@ -1035,6 +1060,7 @@ val password: Password = PasswordGenerator().run {
 ```
 Lambdas in Kotlin implicitly return the result of the last line. That’s why I can omit the temporary variable and store the password directly. Because an extension function is passed to `run` I can also access the password generator’s properties like `seed` or `hash` directly.
 **Source:** _stackoverflow.com_
+        
 ### Q20: How would you refactor this code using "apply"? ☆☆☆
 **Details:**
 Consider:
@@ -1058,6 +1084,7 @@ class Message(message: String, signature: String) {
 }
 ```
 **Source:** _cargocult.dev_
+        
 ### Q1: What is The Billion Dollar Mistake? ☆☆☆☆☆
 **Answer:**
 Kotlin's type system is aimed at eliminating the danger of null references from code, also known as the The Billion Dollar Mistake.
@@ -1065,11 +1092,13 @@ One of the most common pitfalls in many programming languages, including Java, i
 _I call it my billion-dollar mistake. It was the invention of the **null reference** in 1965. At that time, I was designing the first comprehensive type system for references in an object-oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn’t resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years._
 Tony Hoare at QCon London in 2009 https://en.wikipedia.org/wiki/Tony_Hoare
 **Source:** _kotlinlang.org_
+                           
 ### Q2: What is a motivation to make classes final by default in Kotlin? Do you agree with that decision? ☆☆☆☆☆
 **Answer:**
 * First Kotlin takes many ideas from the functional programming world and uses immutability as often as it can to avoid all the known problems with mutation. Also proper designing a class for inheritance requires an excruciating amount of work (and building at least 3 separate subclasses, to verify that you base class actually is useful). Most classes should be final. Extending them is probably a bad idea.
 * The second thought which comes to my mind is that inheritance is often missused. There is the principle "Favor composition over inheritance" as a guideline for better designs. So declaring every class as final by default forces the developer to at least stop for a moment and think about alternative ways to solve the problem instead of using inheritance for the wrong reasons.
 **Source:** _stackoverflow.com_
+                           
 ### Q3: How does the reified keyword in Kotlin work? ☆☆☆☆☆
 **Answer:**
 In an ordinary generic function like `myGenericFun`, you can't access the type `T` because it is, like in Java, erased at runtime and thus only available at compile time. Therefore, if you want to use the generic type as a normal `Class` in the function body you need to explicitly pass the class as a parameter like the parameter `c` in the example. 
@@ -1085,6 +1114,7 @@ inline fun <reified T : Activity> Activity.startActivity() {
 ```
 You can only use `reified` in combination with an _inline function_. Such a function makes the compiler _copy the function's bytecode to every place where the function is being used_ (the function is being "inlined"). When you call an inline function with reified type, the _compiler knows_ the actual type used as a type argument and modifies the generated bytecode to use the corresponding class directly. Therefore calls like `myVar is T` become `myVar is String` (if the type argument were `String`) in the bytecode and at runtime.
 **Source:** _stackoverflow.com_
+                           
 ### Q4: How to implement Builder pattern in Kotlin? ☆☆☆☆☆
 **Answer:**
 First and foremost, in most cases you don't need to use builders in Kotlin because we have default and named arguments but if you need one use:
@@ -1110,6 +1140,7 @@ Usage:
 val car = Car.Builder().model("X").build()
 ```
 **Source:** _stackoverflow.com_
+        
 ### Q5: When to use and do not use an inline function in Kotlin? ☆☆☆☆☆
 **Answer:**
 Using higher-order functions imposes certain runtime penalties: each function is an object, and it captures a closure, i.e. those variables that are accessed in the body of the function. Memory allocations (both for function objects and classes) and virtual calls introduce runtime overhead.
@@ -1136,6 +1167,7 @@ System.out.println("after");
 When we don’t have function type parameter, reified type parameter, and we don’t need non-local return, then we most likely shouldn’t use inline modifier. 
 Also there is the code size problem. Inlining a large function could dramatically increase the size of the bytecode because it's copied to every calls site. Inlining may cause the generated code to grow; however, if we do it in a reasonable way (i.e. avoiding inlining large functions), it will pay off in performance.
 **Source:** _stackoverflow.com_
+                           
 ### Q6: How Kotlin coroutines are better than RxKotlin/RxJava? ☆☆☆☆☆
 **Answer:**
 Kotlin coroutines are different from Rx. Both are designed to address a problem of asynchronous programming, however their approach to solution is very different:
@@ -1147,12 +1179,14 @@ Coroutines are better to deal with resources
  - Coroutines give more control on when those computation occur. You can for example pass hand (`yield`), prioritize (`select`), parallelize (multiple `producer`/`actor` on `channel`) or lock resource (`Mutex`) for a given computation. It may not matter on server (where RxJava came first) but on resources limited environment this level of control may be required.
  - Due to it's reactive nature, backpressure doesn't fit well in RxJava. In the other end `send()` to channel is a suspensive function that suspend when channel capacity is reached. It's out-of-the-box backpressure given by nature. You could also `offer()` to channel, in which case the call never suspend but return `false` in case the channel is full, effectively reproducing `onBackpressureDrop()` from RxJava. Or you could just write your own custom backpressure logic, which won't be difficult with coroutines, especially compared to do the same with RxJava.
 **Source:** _stackoverflow.com_
+        
 ### Q7: What is the difference between launch/join and async/await in Kotlin coroutines? ☆☆☆☆☆
 **Answer:**
 * **launch** is used to** fire and forget coroutine**. It is like starting a new thread. If the code inside the `launch` terminates with exception, then it is treated like _uncaught_ exception in a thread -- usually printed to stderr in backend JVM applications and crashes Android applications. `join` is used to wait for completion of the launched coroutine and it does not propagate its exception. However, a crashed _child_ coroutine cancels its parent with the corresponding exception, too.
 * **async** is used to **start a coroutine that computes some result**. The result is represented by an instance of `Deferred` and you **must** use `await` on it. An uncaught exception inside the async code is stored inside the resulting `Deferred` and is not delivered anywhere else, it will get silently dropped unless processed. **You MUST NOT forget about the coroutine you’ve started with async.**
 **Source:** _stackoverflow.com_
-### Q68: What is the difference between Java field and Kotlin property? ☆☆☆☆☆
+        
+### Q8: What is the difference between Java field and Kotlin property? ☆☆☆☆☆
 **Answer:**
 This is an example of a Java field:
 ```java
@@ -1174,7 +1208,8 @@ public void setName(String name) {
 ```
 The default implementation of Kotlin property includes field and accessors (getter for val, and getter and setter for var). Thanks to that, we can always replace accessors default implementation with a custom one.
 **Source:** _blog.kotlin-academy.com_
-### Q69: What is the difference between and interface and an abstract class? ☆☆
+        
+### Q9: What is the difference between and interface and an abstract class? ☆☆
 **Answer:**
 Though both may seem very similar they are in fact very different and serve very different purposes. Abstract classes are meant to serve the purpose of Generalizing behavior while interfaces are meant to serve the purpose of Standardizing behavior.
 **Source:** _paulfran.co/_
